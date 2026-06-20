@@ -1,124 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-bs-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="main.css">
-  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
- </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programación Web I — Demo Bootstrap</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* Pequeños ajustes propios sobre Bootstrap, no lo sustituyen */
+        body {
+            background-color: var(--bs-tertiary-bg);
+        }
+
+        .hero-curso {
+            background: linear-gradient(135deg, var(--bs-purple), #4B2E83);
+        }
+
+        .seccion-titulo {
+            letter-spacing: .03em;
+            text-transform: uppercase;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--bs-purple);
+        }
+
+        .card-formulario {
+            border: 1px solid var(--bs-border-color);
+        }
+
+        .carousel-inner img {
+            height: 220px;
+            object-fit: cover;
+        }
+    </style>
+</head>
 <body>
 
-    <header>
-        <h1 class="text-white bg-primary text-center">Programación Web I</h1>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar bg-white border-bottom shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2 mb-0" href="#">
+                <span class="badge bg-primary">ISW-521</span>
+                <span class="d-none d-sm-inline">Programación en Ambiente Web I</span>
+                <span class="d-inline d-sm-none">Prog. Ambiente Web I</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero-curso text-white py-5">
+        <div class="container">
+            <p class="seccion-titulo text-white-50 mb-2">Reseña del curso</p>
+            <h1 class="display-6 fw-bold mb-3">Desarrollo de aplicaciones web modernas</h1>
+            <p class="lead mb-0 col-lg-8">
+                Este curso procura que la persona estudiante desarrolle su habilidad
+                para el desarrollo de aplicaciones de software utilizando ambientes
+                web acorde con los estándares internacionales, los patrones de
+                diseño y las buenas prácticas de la industria, que permitan la
+                visualización, manejo y acceso seguro al sitio web desde cualquier
+                tipo de dispositivo.
+            </p>
+        </div>
     </header>
 
-    <main class="container">
+    <main class="container py-5">
 
-        <!-- Reseña -->
-        <section class="reseña">
-            <h2 class="text-secondary text-success">Reseña del Curso</h2>
-            <p class="bg-primary-subtle border border-primary-subtle rounded-3"><strong>
-                Este curso de programación procura que la persona estudiante
-                desarrolle su habilidad para el desarrollo de aplicaciones de
-                software utilizando ambientes web acorde con los estándares
-                internacionales, los patrones de diseño y las buenas prácticas
-                de la industria, que permitan la visualización, manejo y acceso
-                seguro al sitio web desde cualquier tipo de dispositivo.
-            </p>
-        </section>
+        <!-- ============ GALERÍA / CAROUSEL ============ -->
+        <section class="mb-5">
+            <p class="seccion-titulo mb-1">Galería</p>
+            <h2 class="h4 mb-4">Ecosistema de frameworks CSS</h2>
 
-        <!-- Galería -->
-        <section class="galeria text-info">
-            <h2>Galería de Imágenes</h2>
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleInterval" class="carousel slide rounded-3 overflow-hidden shadow-sm" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="images/images.jpg" class="d-block w-100" alt="Tailwind logo">
+                    <div class="carousel-item active" data-bs-interval="4000">
+                        <img src="images/images.jpg" class="d-block w-100" alt="Logo de Tailwind CSS">
                     </div>
-                    <div class="carousel-item" data-bs-interval="10000">
-                    <img src="images/collage.jpg" class="d-block w-100" alt="Logos Collage">
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="images/collage.jpg" class="d-block w-100" alt="Collage de logos de frameworks CSS">
                     </div>
-                    <div class="carousel-item" data-bs-interval="10000">
-                    <img src="images/boostrapImage.jpg" class="d-block w-100" alt="Bootstrap logo">
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="images/boostrapImage.jpg" class="d-block w-100" alt="Logo de Bootstrap">
                     </div>
                 </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
         </section>
-<br>
 
-    <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Desplegar Fromulario
-        </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-                
-                <!-- Formulario -->
-                <section class="formulario">
-                    <span class="text-white bg-warning rounded-1">Formulario de Inscripción usando grid system</span>
+        <!-- ============ ACCORDION + FORMULARIO ============ -->
+        <section>
+            <p class="seccion-titulo mb-1">Inscripción</p>
+            <h2 class="h4 mb-4">Formulario de matrícula</h2>
 
-                    <form class="row g-3">
-                    <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">State</label>
-                        <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <label for="inputZip" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h3 class="accordion-header h6 mb-0">
+                        <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Desplegar formulario de inscripción
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body bg-white">
+
+                            <div class="card card-formulario border-0">
+                                <div class="card-body p-4">
+                                    <span class="badge text-bg-warning-subtle text-warning-emphasis mb-3">
+                                        Formulario construido con el grid system de Bootstrap
+                                    </span>
+
+                                    <form class="row g-3" novalidate>
+                                        <div class="col-md-6">
+                                            <label for="inputEmail4" class="form-label">Correo electrónico</label>
+                                            <input type="email" class="form-control" id="inputEmail4" placeholder="nombre@utn.ac.cr">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputPassword4" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" id="inputPassword4">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAddress" class="form-label">Dirección</label>
+                                            <input type="text" class="form-control" id="inputAddress" placeholder="Calle principal, San Carlos">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAddress2" class="form-label">Dirección 2</label>
+                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, piso o referencia">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputCity" class="form-label">Ciudad</label>
+                                            <input type="text" class="form-control" id="inputCity" placeholder="San Carlos">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="inputState" class="form-label">Provincia</label>
+                                            <select id="inputState" class="form-select">
+                                                <option selected>Seleccione...</option>
+                                                <option>Alajuela</option>
+                                                <option>San José</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="inputZip" class="form-label">Código postal</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    Acepto los términos y condiciones del curso
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary px-4" type="submit">Inscribirse</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="col-12">
-                       <button class="btn btn-primary" type="submit">Inscribirse</button>
-                    </div>
-                </section>
-        </div>
-        </div>
-    </div>
-    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Programación Web I - Todos los derechos reservados.</p>
+    <footer class="border-top py-4 mt-5">
+        <div class="container text-center text-muted small">
+            &copy; 2026 Programación Web I · Universidad Técnica Nacional, Sede San Carlos
+        </div>
     </footer>
+
+    <!-- El script va al final del body: el DOM ya existe cuando se ejecuta -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>
