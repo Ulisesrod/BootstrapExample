@@ -1,8 +1,32 @@
-// Custom.scss
-// Option A: Include all of Bootstrap
+// main.scss
+// Punto de entrada Sass del proyecto. Bootstrap se compila desde aquí,
+// no se usa CDN, para poder demostrar en vivo la personalización vía
+// variables Sass (uno de los puntos clave de la investigación).
 
-// Include any default variable overrides here (though functions won’t be available)
+// ----------------------------------------------------------------------
+// PASO 1: Overrides de variables ANTES del import.
+// Bootstrap define sus variables con !default, así que cualquier valor
+// que asignemos aquí ANTES de importar el framework tiene prioridad y
+// sobrescribe el valor por defecto. Si esto se pone DESPUÉS del import,
+// no tiene efecto.
+// ----------------------------------------------------------------------
 
+// Ejemplo de personalización: usamos el morado oficial de Bootstrap como
+// color primario explícito (en vez del azul por defecto), solo para
+// mostrar en clase cómo un cambio de variable afecta TODOS los
+// componentes que usan $primary (botones, alerts, badges, etc.)
+$primary: #7952b3;
+
+// ----------------------------------------------------------------------
+// PASO 2: Import completo de Bootstrap.
+// Esto trae el framework entero: variables, mixins, grid, componentes
+// y utilidades. Internamente Bootstrap usa !default en sus variables,
+// por eso nuestro override de $primary arriba se respeta.
+// ----------------------------------------------------------------------
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// Then add additional custom code here
+// ----------------------------------------------------------------------
+// PASO 3: CSS propio adicional (opcional).
+// Cualquier estilo personalizado que no exista como variable de
+// Bootstrap se agrega aquí, después del import.
+// ----------------------------------------------------------------------
